@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kontak - Halim Store</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<div id="navbar"></div>
+
+
+<!-- ================= HEADER ================= -->
+<section class="contact-header">
+
+    <h1>Hubungi Kami</h1>
+    <p>Kami siap membantu kebutuhan belanja Anda</p>
+
+</section>
+
+
+<!-- ================= CONTACT CONTENT ================= -->
+<section class="contact-section">
+
+<div class="contact-wrapper">
+
+    <!-- INFO KONTAK -->
+    <div class="contact-info">
+
+        <h2>Informasi Toko</h2>
+
+        <div class="info-item">
+            <span>📍</span>
+            <p>Jl. Jetak - Kacu Depan Mts Nurul Huda, Jetak Kedungdowo Kaliwungu Kudus</p>
+        </div>
+
+        <div class="info-item">
+            <span>📞</span>
+            <p>0813-2936-3474</p>
+        </div>
+
+        <div class="info-item">
+            <span>✉️</span>
+            <p>halimstore@gmail.com</p>
+        </div>
+
+        <div class="info-item">
+            <span>🕒</span>
+            <p>06.00 - 21.30 WIB</p>
+        </div>
+
+    </div>
+
+
+    <!-- FORM -->
+    <div class="contact-form">
+
+        <h2>Kirim Pesan</h2>
+
+        <form id="formPesan">
+
+            <input type="text" id="nama" placeholder="Nama Anda" required>
+
+            <input type="text" id="subjek" placeholder="Subjek" required>
+
+            <textarea id="pesan" placeholder="Tulis pesan..." required></textarea>
+
+            <button class="btn-kirim" type="submit">Kirim Pesan</button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ================= MAP ================= -->
+<section class="map-section">
+
+<h2>Lokasi Kami</h2>
+
+<div class="map-container">
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6662.925328953366!2d110.78218133227617!3d-6.79428170776394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70dd2ada9691db%3A0x723800532decefde!2sToko%20Halim%20Cell!5e0!3m2!1sid!2sid!4v1776047223192!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+</div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+<div id="footer"></div>
+
+<script src="assets/js/load.js"></script>
+<script>
+
+document.getElementById("formPesan").addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    let nama = document.getElementById("nama").value;
+    let subjek = document.getElementById("subjek").value;
+    let pesan = document.getElementById("pesan").value;
+
+    let nomorWA = "6281329363474"; // GANTI NOMOR KAMU
+
+    let text =
+`Halo Halim Store,
+
+Nama : ${nama}
+Subjek : ${subjek}
+
+Pesan :
+${pesan}`;
+
+    let url = "https://wa.me/" + nomorWA + "?text=" + encodeURIComponent(text);
+
+    window.open(url, "_blank");
+
+});
+
+</script>
+</body>
+</html>
